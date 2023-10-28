@@ -23,15 +23,39 @@
             border-radius: 5px;
         }
 
-        /* Style for the play button */
+        /* Style for the creative blinking play button */
         .play-button {
             display: block;
             margin: 20px auto; /* Center the button horizontally with some spacing */
             padding: 10px 20px;
-            background-color: #3498db; /* Blue background color for the play button */
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            animation: blink 1s infinite, changeColor 4s infinite; /* Apply blinking and color change animations */
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% {
+                opacity: 1;
+            }
+            25%, 75% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes changeColor {
+            0% {
+                background-color: #3498db; /* Initial blue color */
+                color: white;
+            }
+            50% {
+                background-color: #e74c3c; /* Change to red color */
+                color: white;
+            }
+            100% {
+                background-color: #3498db; /* Change back to blue color */
+                color: white;
+            }
         }
     </style>
     <title>HornPub</title>
